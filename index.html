@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="header__logo">
+        <a href="#">sokolova zhanna</a>
+        <span class="tag">ux/ui designer</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#cases">Кейсы</a></li>
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#tools">Инструменты</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="header__cta">Сотрудничать</button>
+      <button class="header__burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+
+      <!-- Главная -->
+      <section class="hero">
+        <span>UX/UI-design</span>
+        <div class="hero__title">
+          <h1>Step by step</h1>
+          <img src="img/Ellipse.svg" alt="">
+        </div>
+        <p>Сайты/лендинги/креативы для вашего бизнеса</p>
+        <div class="hero__photo">
+          <img src="img/photo_me.jpg" alt="Жанна Соколова">
+        </div>
+      </section>
+
+      <!-- Кейсы — без контейнера, на всю ширину -->
+      <section class="cases" id="cases">
+
+        <div class="case">
+          <div class="case__image">
+            <div class="case__meta">
+              <span class="tag">Диадент</span>
+              <span class="tag">UX-UI</span>
+              <span class="tag">Сайт</span>
+              <span class="tag">2025</span>
+            </div>
+            <img src="img/case-diadent.jpg" alt="Диадент">
+            <div class="case__btns">
+              <a href="pdf/diadent.pdf" target="_blank" class="case__pdf">Разбор кейса PDF<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2286_48)"><mask id="mask0_2286_48" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20"><path d="M0 0H20V20H0V0Z" fill="white"/></mask><g mask="url(#mask0_2286_48)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.833333 13.3334C1.29357 13.3334 1.66667 13.7065 1.66667 14.1667V15.8334C1.66667 17.2065 2.79357 18.3334 4.16667 18.3334H15.8333C17.2064 18.3334 18.3333 17.2065 18.3333 15.8334V14.1667C18.3333 13.7065 18.7064 13.3334 19.1667 13.3334C19.6269 13.3334 20 13.7065 20 14.1667V15.8334C20 18.127 18.1269 20 15.8333 20H4.16667C1.8731 20 0 18.127 0 15.8334V14.1667C0 13.7065 0.373096 13.3334 0.833333 13.3334Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0003 0C10.4606 0 10.8337 0.373096 10.8337 0.833333V14.1667C10.8337 14.6269 10.4606 15 10.0003 15C9.54008 15 9.16699 14.6269 9.16699 14.1667V0.833333C9.16699 0.373096 9.54008 0 10.0003 0Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.24408 9.41081C5.56952 9.08539 6.09715 9.08539 6.42259 9.41081L10 12.9882L13.5774 9.41081C13.9028 9.08539 14.4305 9.08539 14.7559 9.41081C15.0813 9.73623 15.0813 10.2639 14.7559 10.5893L10.5892 14.756C10.2638 15.0814 9.73617 15.0814 9.41075 14.756L5.24408 10.5893C4.91864 10.2639 4.91864 9.73623 5.24408 9.41081Z" fill="white"/></g></g><defs><clipPath id="clip0_2286_48"><rect width="20" height="20" fill="white"/></clipPath></defs></svg></a>
+              <a href="ссылка на сайт" target="_blank" class="case__link">Кейс<svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 5C16 4.44771 15.5523 4 15 4L6 4C5.44772 4 5 4.44771 5 5C5 5.55228 5.44772 6 6 6L14 6L14 14C14 14.5523 14.4477 15 15 15C15.5523 15 16 14.5523 16 14L16 5ZM5 15L5.70711 15.7071L15.7071 5.70711L15 5L14.2929 4.29289L4.29289 14.2929L5 15Z" fill="#C94D17"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="case__image">
+            <div class="case__meta">
+              <span class="tag">Car-Tech</span>
+              <span class="tag">UI</span>
+              <span class="tag">лендинг</span>
+              <span class="tag">2024</span>
+            </div>
+            <img src="img/case-cartech.jpg" alt="Car-Tech">
+            <div class="case__btns">
+              <a href="pdf/diadent.pdf" target="_blank" class="case__pdf">Разбор кейса PDF<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2286_48)"><mask id="mask0_2286_48" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20"><path d="M0 0H20V20H0V0Z" fill="white"/></mask><g mask="url(#mask0_2286_48)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.833333 13.3334C1.29357 13.3334 1.66667 13.7065 1.66667 14.1667V15.8334C1.66667 17.2065 2.79357 18.3334 4.16667 18.3334H15.8333C17.2064 18.3334 18.3333 17.2065 18.3333 15.8334V14.1667C18.3333 13.7065 18.7064 13.3334 19.1667 13.3334C19.6269 13.3334 20 13.7065 20 14.1667V15.8334C20 18.127 18.1269 20 15.8333 20H4.16667C1.8731 20 0 18.127 0 15.8334V14.1667C0 13.7065 0.373096 13.3334 0.833333 13.3334Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0003 0C10.4606 0 10.8337 0.373096 10.8337 0.833333V14.1667C10.8337 14.6269 10.4606 15 10.0003 15C9.54008 15 9.16699 14.6269 9.16699 14.1667V0.833333C9.16699 0.373096 9.54008 0 10.0003 0Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.24408 9.41081C5.56952 9.08539 6.09715 9.08539 6.42259 9.41081L10 12.9882L13.5774 9.41081C13.9028 9.08539 14.4305 9.08539 14.7559 9.41081C15.0813 9.73623 15.0813 10.2639 14.7559 10.5893L10.5892 14.756C10.2638 15.0814 9.73617 15.0814 9.41075 14.756L5.24408 10.5893C4.91864 10.2639 4.91864 9.73623 5.24408 9.41081Z" fill="white"/></g></g><defs><clipPath id="clip0_2286_48"><rect width="20" height="20" fill="white"/></clipPath></defs></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="case__image">
+            <div class="case__meta">
+              <span class="tag">Batman</span>
+              <span class="tag">UX-UI</span>
+              <span class="tag">сайт</span>
+              <span class="tag">пет-проект</span>
+              <span class="tag">2025</span>
+            </div>
+            <img src="img/case-Batman.jpg" alt="Batman">
+            <div class="case__btns">
+              <a href="pdf/diadent.pdf" target="_blank" class="case__pdf">Разбор кейса PDF<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2286_48)"><mask id="mask0_2286_48" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20"><path d="M0 0H20V20H0V0Z" fill="white"/></mask><g mask="url(#mask0_2286_48)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.833333 13.3334C1.29357 13.3334 1.66667 13.7065 1.66667 14.1667V15.8334C1.66667 17.2065 2.79357 18.3334 4.16667 18.3334H15.8333C17.2064 18.3334 18.3333 17.2065 18.3333 15.8334V14.1667C18.3333 13.7065 18.7064 13.3334 19.1667 13.3334C19.6269 13.3334 20 13.7065 20 14.1667V15.8334C20 18.127 18.1269 20 15.8333 20H4.16667C1.8731 20 0 18.127 0 15.8334V14.1667C0 13.7065 0.373096 13.3334 0.833333 13.3334Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0003 0C10.4606 0 10.8337 0.373096 10.8337 0.833333V14.1667C10.8337 14.6269 10.4606 15 10.0003 15C9.54008 15 9.16699 14.6269 9.16699 14.1667V0.833333C9.16699 0.373096 9.54008 0 10.0003 0Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.24408 9.41081C5.56952 9.08539 6.09715 9.08539 6.42259 9.41081L10 12.9882L13.5774 9.41081C13.9028 9.08539 14.4305 9.08539 14.7559 9.41081C15.0813 9.73623 15.0813 10.2639 14.7559 10.5893L10.5892 14.756C10.2638 15.0814 9.73617 15.0814 9.41075 14.756L5.24408 10.5893C4.91864 10.2639 4.91864 9.73623 5.24408 9.41081Z" fill="white"/></g></g><defs><clipPath id="clip0_2286_48"><rect width="20" height="20" fill="white"/></clipPath></defs></svg></a>
+              <a href="ссылка на сайт" target="_blank" class="case__link">Кейс<svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 5C16 4.44771 15.5523 4 15 4L6 4C5.44772 4 5 4.44771 5 5C5 5.55228 5.44772 6 6 6L14 6L14 14C14 14.5523 14.4477 15 15 15C15.5523 15 16 14.5523 16 14L16 5ZM5 15L5.70711 15.7071L15.7071 5.70711L15 5L14.2929 4.29289L4.29289 14.2929L5 15Z" fill="#C94D17"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="case__image">
+            <div class="case__meta">
+              <span class="tag">Dentex</span>
+              <span class="tag">UX-UI</span>
+              <span class="tag">сайт</span>
+              <span class="tag">2025</span>
+            </div>
+            <img src="img/case-Dentex.jpg" alt="Dentex">
+            <div class="case__btns">
+              <a href="pdf/diadent.pdf" target="_blank" class="case__pdf">Разбор кейса PDF<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2286_48)"><mask id="mask0_2286_48" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20"><path d="M0 0H20V20H0V0Z" fill="white"/></mask><g mask="url(#mask0_2286_48)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.833333 13.3334C1.29357 13.3334 1.66667 13.7065 1.66667 14.1667V15.8334C1.66667 17.2065 2.79357 18.3334 4.16667 18.3334H15.8333C17.2064 18.3334 18.3333 17.2065 18.3333 15.8334V14.1667C18.3333 13.7065 18.7064 13.3334 19.1667 13.3334C19.6269 13.3334 20 13.7065 20 14.1667V15.8334C20 18.127 18.1269 20 15.8333 20H4.16667C1.8731 20 0 18.127 0 15.8334V14.1667C0 13.7065 0.373096 13.3334 0.833333 13.3334Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0003 0C10.4606 0 10.8337 0.373096 10.8337 0.833333V14.1667C10.8337 14.6269 10.4606 15 10.0003 15C9.54008 15 9.16699 14.6269 9.16699 14.1667V0.833333C9.16699 0.373096 9.54008 0 10.0003 0Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.24408 9.41081C5.56952 9.08539 6.09715 9.08539 6.42259 9.41081L10 12.9882L13.5774 9.41081C13.9028 9.08539 14.4305 9.08539 14.7559 9.41081C15.0813 9.73623 15.0813 10.2639 14.7559 10.5893L10.5892 14.756C10.2638 15.0814 9.73617 15.0814 9.41075 14.756L5.24408 10.5893C4.91864 10.2639 4.91864 9.73623 5.24408 9.41081Z" fill="white"/></g></g><defs><clipPath id="clip0_2286_48"><rect width="20" height="20" fill="white"/></clipPath></defs></svg></a>
+              <a href="ссылка на сайт" target="_blank" class="case__link">Кейс<svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 5C16 4.44771 15.5523 4 15 4L6 4C5.44772 4 5 4.44771 5 5C5 5.55228 5.44772 6 6 6L14 6L14 14C14 14.5523 14.4477 15 15 15C15.5523 15 16 14.5523 16 14L16 5ZM5 15L5.70711 15.7071L15.7071 5.70711L15 5L14.2929 4.29289L4.29289 14.2929L5 15Z" fill="#C94D17"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="case__image">
+            <div class="case__meta">
+              <span class="tag">Дентал Визит</span>
+              <span class="tag">UI</span>
+              <span class="tag">лендинг</span>
+              <span class="tag">2026</span>
+            </div>
+            <img src="img/case-Дентал_Визит.jpg" alt="Дентал Визит">
+            <div class="case__btns">
+              <a href="pdf/diadent.pdf" target="_blank" class="case__pdf">Разбор кейса PDF<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2286_48)"><mask id="mask0_2286_48" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20"><path d="M0 0H20V20H0V0Z" fill="white"/></mask><g mask="url(#mask0_2286_48)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.833333 13.3334C1.29357 13.3334 1.66667 13.7065 1.66667 14.1667V15.8334C1.66667 17.2065 2.79357 18.3334 4.16667 18.3334H15.8333C17.2064 18.3334 18.3333 17.2065 18.3333 15.8334V14.1667C18.3333 13.7065 18.7064 13.3334 19.1667 13.3334C19.6269 13.3334 20 13.7065 20 14.1667V15.8334C20 18.127 18.1269 20 15.8333 20H4.16667C1.8731 20 0 18.127 0 15.8334V14.1667C0 13.7065 0.373096 13.3334 0.833333 13.3334Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0003 0C10.4606 0 10.8337 0.373096 10.8337 0.833333V14.1667C10.8337 14.6269 10.4606 15 10.0003 15C9.54008 15 9.16699 14.6269 9.16699 14.1667V0.833333C9.16699 0.373096 9.54008 0 10.0003 0Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.24408 9.41081C5.56952 9.08539 6.09715 9.08539 6.42259 9.41081L10 12.9882L13.5774 9.41081C13.9028 9.08539 14.4305 9.08539 14.7559 9.41081C15.0813 9.73623 15.0813 10.2639 14.7559 10.5893L10.5892 14.756C10.2638 15.0814 9.73617 15.0814 9.41075 14.756L5.24408 10.5893C4.91864 10.2639 4.91864 9.73623 5.24408 9.41081Z" fill="white"/></g></g><defs><clipPath id="clip0_2286_48"><rect width="20" height="20" fill="white"/></clipPath></defs></svg></a>
+              <a href="ссылка на сайт" target="_blank" class="case__link">Кейс<svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 5C16 4.44771 15.5523 4 15 4L6 4C5.44772 4 5 4.44771 5 5C5 5.55228 5.44772 6 6 6L14 6L14 14C14 14.5523 14.4477 15 15 15C15.5523 15 16 14.5523 16 14L16 5ZM5 15L5.70711 15.7071L15.7071 5.70711L15 5L14.2929 4.29289L4.29289 14.2929L5 15Z" fill="#C94D17"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Обо мне -->
+      <section class="experience container" id="about">
+        <div class="experience__heading">
+          <span class="tag">опыт работы</span>
+          <h2>Более 3-х лет</h2>
+        </div>
+        <div class="experience__body">
+          <div>
+            <p>За это время я работала над проектами разного масштаба - от лендингов для локального бизнеса до полноценного интернет-магазина с 30+ страницами.<br><br>В своей работе я не останавливаюсь на визуале</p>
+            <ul class="tags">
+              <li class="tag">пользовательские исследования</li>
+              <li class="tag">персоны</li>
+              <li class="tag">CJM</li>
+              <li class="tag">прототипирование</li>
+            </ul>
+          </div>
+          <p>Умею объяснить каждое решение.<br><br>Работала в нише медицинского маркетинга — стоматологии, имплантология — и знаю как делать дизайн который не просто красиво выглядит но и продаёт.</p>
+        </div>
+      </section>
+
+      <!-- Инструменты -->
+      <section class="inst container" id="tools">
+        <span class="tag">инструменты</span>
+        <h2>Использую в своей работе ежедневно:</h2>
+        <div class="instrumental">
+          <div class="instrumental__left">
+            <img src="img/gpt.jpg" alt="ChatGPT">
+            <img src="img/figma.jpg" alt="Figma">
+          </div>
+          <div class="instrumental__right">
+            <img src="img/ps.jpg" alt="Photoshop">
+          </div>
+        </div>
+      </section>
+
+      <!-- Контакты -->
+      <section class="contacts container" id="contacts">
+        <a href="https://t.me/username" target="_blank" class="contacts__telegram">Телеграм</a>
+        <a href="mailto:sokolovskaya.polina@inbox.ru" class="contacts__email">E-mail</a>
+      </section>
+
+    </main>
+
+    <footer>
+
+      <!-- Верхняя строка: лого + навигация -->
+      <div class="footer__top">
+        <div class="footer__logo">
+          <a href="#">sokolova zhanna</a>
+          <span class="tag">ux/ui designer</span>
+        </div>
+        <nav class="footer__nav">
+          <ul>
+            <li><a href="#cases">Кейсы</a></li>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#tools">Инструменты</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Нижняя строка -->
+      <div class="footer__bottom">
+        <div class="footer__col">
+          <p class="footer__label">Режим работы</p>
+          <p>Иркутск <span class="tag">+5МСК</span></p>
+          <p>Пн-Пт с 9:00 до 19:00</p>
+        </div>
+        <div class="footer__col">
+          <p class="footer__label">Контакты</p>
+          <a href="mailto:sokolovskaya.polina@inbox.ru">sokolovskaya.polina@inbox.ru</a>
+          <a href="https://t.me/username" target="_blank">Телеграм: @username</a>
+        </div>
+        <span class="footer__year">2026</span>
+      </div>
+
+    </footer>
+
+    <script>
+      // ===== BURGER MENU =====
+      const burger = document.querySelector('.header__burger');
+      const nav    = document.querySelector('header nav');
+
+      burger.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('nav--open');
+        burger.classList.toggle('burger--open', isOpen);
+        burger.setAttribute('aria-expanded', isOpen);
+        document.body.classList.toggle('nav-locked', isOpen);
+      });
+
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('nav--open');
+          burger.classList.remove('burger--open');
+          burger.setAttribute('aria-expanded', false);
+          document.body.classList.remove('nav-locked');
+        });
+      });
+
+      // ===== MOBILE CARD ANIMATIONS =====
+      // Используем scroll на самом контейнере — работает во время свайпа,
+      // в отличие от IntersectionObserver который стреляет после отрыва пальца
+      const setupCardScroll = () => {
+        const cards = document.querySelectorAll('.case');
+        const casesEl = document.querySelector('.cases');
+
+        const checkVisible = () => {
+          const vw = window.innerWidth;
+          cards.forEach(card => {
+            if (card.classList.contains('case--visible')) return;
+            const rect = card.getBoundingClientRect();
+            // Карточка считается видимой когда её центр попадает в экран
+            const center = rect.left + rect.width / 2;
+            if (center > 0 && center < vw) {
+              card.classList.add('case--visible');
+            }
+          });
+        };
+
+        casesEl.addEventListener('scroll', checkVisible, { passive: true });
+        checkVisible(); // первая карточка видна сразу
+      };
+
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        setupCardScroll();
+      }
+    </script>
+
+    <script>
+      const cases = document.querySelector('.cases');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      let velX = 0;
+      let momentumID;
+      let hasDragged = false;
+
+      cases.addEventListener('mousedown', (e) => {
+        isDown = true;
+        hasDragged = false;
+        cases.classList.add('active');
+        startX = e.pageX - cases.offsetLeft;
+        scrollLeft = cases.scrollLeft;
+        cancelMomentum();
+      });
+
+      // mouseup на document — ловим отпускание мыши в любом месте страницы
+      document.addEventListener('mouseup', () => {
+        if (!isDown) return;
+        isDown = false;
+        cases.classList.remove('active');
+        beginMomentum();
+      });
+
+      cases.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - cases.offsetLeft;
+        const walk = x - startX;
+        if (Math.abs(walk) > 4) hasDragged = true;
+        const prevScrollLeft = cases.scrollLeft;
+        cases.scrollLeft = scrollLeft - walk;
+        velX = cases.scrollLeft - prevScrollLeft;
+      });
+
+      // Не даём кликнуть по ссылке если было перетаскивание
+      cases.addEventListener('click', (e) => {
+        if (hasDragged) e.preventDefault();
+      });
+
+      function beginMomentum() {
+        cancelMomentum();
+        momentumID = requestAnimationFrame(momentum);
+      }
+
+      function momentum() {
+        if (Math.abs(velX) > 0.5) {
+          cases.scrollLeft += velX;
+          velX *= 0.92;
+          momentumID = requestAnimationFrame(momentum);
+        }
+      }
+
+      function cancelMomentum() {
+        if (momentumID) cancelAnimationFrame(momentumID);
+      }
+    </script>
+
+  </body>
+</html>

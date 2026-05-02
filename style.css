@@ -1,0 +1,877 @@
+/* ===== ШРИФТЫ ===== */
+@font-face {
+    font-family: 'involve';
+    src: url(fonts/Involve-Medium.woff2);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'involve';
+    src: url(fonts/Involve-SemiBold.woff2);
+    font-weight: 600;
+}
+
+/* ===== ПЕРЕМЕННЫЕ ===== */
+:root {
+    --bg: #F7F6E8;
+    --accent: #C94D17;
+    --white: #FFFFFF;
+    --side: clamp(20px, 4vw, 40px);
+}
+
+/* ===== СБРОС ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+body {
+    background-color: var(--bg);
+    color: var(--accent);
+    font-family: 'involve', sans-serif;
+    font-weight: 500;
+}
+
+body.nav-locked {
+    overflow: hidden;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ===== КОНТЕЙНЕР ===== */
+.container {
+    padding-left: var(--side);
+    padding-right: var(--side);
+}
+
+/* ===== ТЕГИ / ПЛАШКИ ===== */
+.tag {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--bg);
+    border: 1px solid var(--accent);
+    padding: 2px 7px;
+    border-radius: 100px;
+}
+
+.case__meta .tag {
+    border: none;
+    background-color: var(--white);
+}
+
+/* ===== ХЭДЕР ===== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px var(--side);
+    position: relative;
+    gap: 24px;
+    z-index: 200;
+    background-color: var(--bg);
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 20px);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.header__logo a {
+    text-transform: uppercase;
+    font-size: clamp(14px, 1.5vw, 20px);
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    overflow: hidden;
+}
+
+nav ul {
+    display: flex;
+    gap: clamp(20px, 3.5vw, 50px);
+    font-size: clamp(14px, 1.3vw, 18px);
+}
+
+/* Кнопка «Сотрудничать» */
+.header__cta {
+    background-color: var(--accent);
+    color: var(--bg);
+    font-family: 'involve', sans-serif;
+    font-size: clamp(14px, 1.3vw, 18px);
+    font-weight: 600;
+    border-radius: 100px;
+    padding: clamp(10px, 1vw, 13px) clamp(20px, 2.5vw, 40px);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Бургер — скрыт на десктопе */
+.header__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    z-index: 201;
+}
+
+.header__burger span {
+    display: block;
+    height: 2px;
+    background-color: var(--accent);
+    border-radius: 2px;
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+/* X при открытом меню */
+.header__burger.burger--open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.header__burger.burger--open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.header__burger.burger--open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== ГЕРОЙ ===== */
+.hero {
+    padding-top: clamp(60px, 9vw, 127px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero span {
+    font-size: 16px;
+}
+
+.hero__title {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Gravitas One', serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: clamp(24px, 3vw, 42px);
+    font-size: clamp(60px, 10vw, 160px);
+}
+
+.hero__title img {
+    display: block;
+    width: clamp(160px, 24vw, 339px);
+    margin: -170px auto 0;
+}
+
+.hero p {
+    text-align: center;
+    font-size: clamp(16px, 1.5vw, 20px);
+    max-width: 320px;
+    margin-top: clamp(40px, 5vw, 64px);
+}
+
+.hero__photo {
+    margin-top: clamp(50px, 7vw, 90px);
+}
+
+/* ===== АНИМАЦИИ HERO ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* animation-fill-mode: both — элемент невидим ДО старта */
+.hero > span {
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.1s;
+}
+
+.hero__title {
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.5s;
+}
+
+.hero > p {
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 1s;
+}
+
+.hero__photo {
+    animation: slideUp 0.9s ease both;
+    animation-delay: 1.4s;
+}
+
+/* ===== КЕЙСЫ ===== */
+.cases {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: clamp(12px, 1.5vw, 18px);
+    margin-top: clamp(80px, 18vw, 260px);
+    margin-bottom: clamp(80px, 18vw, 260px);
+    padding: 0 var(--side);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cases::-webkit-scrollbar { display: none; }
+
+.cases.active {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+/* Во время перетаскивания отключаем ховер-эффекты карточек */
+.cases.active .case__image {
+    pointer-events: none;
+}
+
+.case {
+    width: clamp(280px, 40vw, 600px);
+    flex-shrink: 0;
+}
+
+.case__image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Затемняющий оверлей */
+.case__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.case__image:hover::after {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Зум картинки */
+.case img {
+    width: 100%;
+    height: clamp(280px, 40vw, 600px);
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.case__image:hover img {
+    transform: scale(1.06);
+}
+
+.case__meta {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    z-index: 1;
+}
+
+/* Теги скрыты в статике */
+.case__meta .tag {
+    border: none;
+    background-color: var(--white);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Теги появляются по очереди сверху */
+.case__image:hover .case__meta .tag:nth-child(1) {
+    opacity: 1; transform: translateY(0); transition-delay: 0s;
+}
+.case__image:hover .case__meta .tag:nth-child(2) {
+    opacity: 1; transform: translateY(0); transition-delay: 0.07s;
+}
+.case__image:hover .case__meta .tag:nth-child(3) {
+    opacity: 1; transform: translateY(0); transition-delay: 0.14s;
+}
+.case__image:hover .case__meta .tag:nth-child(4) {
+    opacity: 1; transform: translateY(0); transition-delay: 0.21s;
+}
+.case__image:hover .case__meta .tag:nth-child(5) {
+    opacity: 1; transform: translateY(0); transition-delay: 0.28s;
+}
+
+.case__btns {
+    position: absolute;
+    bottom: 26px;
+    left: 26px;
+    right: 26px;
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+}
+
+/* Кнопки скрыты в статике */
+.case__pdf,
+.case__link {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Кнопки всплывают снизу по очереди */
+.case__image:hover .case__pdf {
+    opacity: 1; transform: translateY(0); transition-delay: 0.15s;
+}
+.case__image:hover .case__link {
+    opacity: 1; transform: translateY(0); transition-delay: 0.25s;
+}
+
+/* Визуальные стили кнопок */
+.case__pdf {
+    font-family: 'involve', sans-serif;
+    font-size: clamp(13px, 1.2vw, 16px);
+    font-weight: 600;
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: 100px;
+    padding: clamp(10px, 1vw, 13px) clamp(16px, 1.8vw, 25px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.case__link {
+    font-family: 'involve', sans-serif;
+    font-size: clamp(13px, 1.2vw, 16px);
+    font-weight: 600;
+    background-color: var(--white);
+    color: var(--accent);
+    border-radius: 100px;
+    padding: clamp(10px, 1vw, 13px) clamp(16px, 1.8vw, 25px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.case__pdf svg,
+.case__link svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* стили кнопок кейсов — выше в блоке hover-анимаций */
+
+/* ===== ОПЫТ =====
+   gap = 700px ровно при viewport 1920px */
+.experience {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(32px, 36.46vw, 700px);
+    margin-top: clamp(60px, 8vw, 120px);
+    margin-bottom: clamp(60px, 8vw, 120px);
+}
+
+.experience__heading {
+    flex-shrink: 0;
+    width: clamp(220px, 22vw, 320px);
+}
+
+.experience__body {
+    display: flex;
+    gap: clamp(24px, 3vw, 40px);
+    flex: 1;
+}
+
+.experience__body > * {
+    flex: 1;
+    max-width: 400px;
+}
+
+h2 {
+    font-size: clamp(28px, 3.5vw, 46px);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 300px;
+    margin-top: 16px;
+}
+
+/* ===== ИНСТРУМЕНТЫ ===== */
+.inst {
+    margin-top: clamp(60px, 8vw, 120px);
+    margin-bottom: clamp(60px, 8vw, 120px);
+}
+
+.instrumental {
+    display: flex;
+    justify-content: space-between;
+    margin-top: clamp(40px, 6vw, 120px);
+    gap: clamp(12px, 1.5vw, 18px);
+}
+
+.instrumental__left {
+    display: flex;
+    gap: clamp(12px, 1.5vw, 18px);
+}
+
+.instrumental__right {
+    display: flex;
+}
+
+.instrumental img {
+    width: clamp(180px, 21vw, 300px);
+    height: clamp(180px, 21vw, 300px);
+    object-fit: contain;
+    background-color: var(--white);
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+/* ===== КОНТАКТЫ ===== */
+.contacts {
+    display: flex;
+    gap: clamp(12px, 1.5vw, 18px);
+    margin-top: clamp(60px, 8vw, 120px);
+    margin-bottom: clamp(60px, 8vw, 120px);
+}
+
+.contacts__telegram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: 6px;
+    font-size: clamp(14px, 1.5vw, 20px);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.contacts__email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    background-color: var(--white);
+    color: var(--accent);
+    border-radius: 6px;
+    font-size: clamp(14px, 1.5vw, 20px);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ===== ФУТЕР ===== */
+footer {
+    width: 100%;
+    padding: clamp(20px, 3vw, 40px) var(--side);
+    margin-top: 40px;
+    position: relative;
+}
+
+.footer__top {
+    padding-bottom: clamp(80px, 18vw, 260px);
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 20px);
+    font-weight: 600;
+    flex: 1;
+}
+
+.footer__logo a {
+    text-transform: uppercase;
+    font-size: clamp(14px, 1.5vw, 20px);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.footer__nav {
+    position: absolute;
+    right: var(--side);
+    top: clamp(20px, 3vw, 40px);
+}
+
+.footer__nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    font-size: clamp(13px, 1.1vw, 16px);
+    font-weight: 600;
+    list-style: none;
+}
+
+.footer__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: clamp(16px, 3vw, 40px);
+}
+
+.footer__col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* «Режим работы» и «Контакты» — жирные лейблы */
+.footer__label {
+    font-size: clamp(13px, 1.1vw, 16px);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.footer__year {
+    font-size: 16px;
+    align-self: flex-end;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* ===== СРЕДНИЙ ЭКРАН (1200px) ===== */
+@media (max-width: 1200px) {
+
+    .experience {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .experience__heading {
+        width: 100%;
+    }
+
+    .experience__body > * {
+        max-width: 100%;
+    }
+}
+
+/* ===== СРЕДНИЙ-УЗКИЙ (960px) ===== */
+@media (max-width: 960px) {
+
+    nav ul {
+        gap: 16px;
+        font-size: 13px;
+    }
+
+    .header__logo a {
+        font-size: 13px;
+    }
+
+    .header__cta {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    .instrumental {
+        flex-direction: column;
+    }
+
+    .instrumental img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ (768px) ===== */
+@media (max-width: 768px) {
+
+    /* --- ХЭДЕР --- */
+    header {
+        padding: 16px 24px 16px 20px;
+        gap: 12px;
+    }
+
+    /* Тег «ux/ui designer» переезжает под лого */
+    .header__logo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    /* Тег чуть меньше */
+    .header__logo .tag {
+        font-size: 11px;
+        padding: 1px 6px;
+    }
+
+    /* Скрываем обычную навигацию и CTA */
+    header > nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: var(--bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+
+    header > nav.nav--open {
+        display: flex;
+    }
+
+    header > nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        font-size: 22px;
+        font-weight: 600;
+        overflow: visible;
+    }
+
+    .header__cta {
+        display: none;
+    }
+
+    /* Показываем бургер */
+    .header__burger {
+        display: flex;
+    }
+
+    /* --- ГЕРОЙ --- */
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero__title img {
+        width: 180px;
+        margin: -80px auto 0;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin-top: 40px;
+    }
+
+    .hero__photo img {
+        width: 220px;
+    }
+
+    /* --- КЕЙСЫ --- */
+    .cases {
+        margin-top: 80px;
+        margin-bottom: 80px;
+        padding: 0 20px;
+    }
+
+    .case {
+        width: clamp(260px, 80vw, 360px);
+    }
+
+    .case img {
+        height: clamp(260px, 80vw, 360px);
+    }
+
+    .case__btns {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        gap: 8px;
+    }
+
+    .case__pdf,
+    .case__link {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    /* На мобилке анимация карточки запускается при въезде в экран,
+       а не при ховере — через класс .case--visible (добавляет JS) */
+    .case--visible .case__image::after {
+        background: rgba(0, 0, 0, 0.25);
+    }
+
+    .case--visible .case__meta .tag:nth-child(1) {
+        opacity: 1; transform: translateY(0); transition-delay: 0s;
+    }
+    .case--visible .case__meta .tag:nth-child(2) {
+        opacity: 1; transform: translateY(0); transition-delay: 0.07s;
+    }
+    .case--visible .case__meta .tag:nth-child(3) {
+        opacity: 1; transform: translateY(0); transition-delay: 0.14s;
+    }
+    .case--visible .case__meta .tag:nth-child(4) {
+        opacity: 1; transform: translateY(0); transition-delay: 0.21s;
+    }
+    .case--visible .case__meta .tag:nth-child(5) {
+        opacity: 1; transform: translateY(0); transition-delay: 0.28s;
+    }
+
+    .case--visible .case__pdf {
+        opacity: 1; transform: translateY(0); transition-delay: 0.15s;
+    }
+    .case--visible .case__link {
+        opacity: 1; transform: translateY(0); transition-delay: 0.25s;
+    }
+
+    /* --- ОПЫТ --- */
+    .experience {
+        flex-direction: column;
+        gap: 32px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .experience__heading {
+        width: 100%;
+    }
+
+    .experience__body {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .experience__body > * {
+        max-width: 100%;
+    }
+
+    /* --- ИНСТРУМЕНТЫ --- */
+    .inst {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .instrumental {
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 32px;
+    }
+
+    .instrumental__left {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .instrumental img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* --- КОНТАКТЫ --- */
+    .contacts {
+        flex-direction: column;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .contacts__telegram,
+    .contacts__email {
+        font-size: 16px;
+    }
+
+    /* --- ФУТЕР --- */
+    footer {
+        padding: 20px;
+    }
+
+    /* Тег «ux/ui designer» под лого — как в хедере */
+    .footer__logo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    /* Убираем абсолютное позиционирование,
+       nav встаёт в поток рядом с лого */
+    .footer__nav {
+        position: static;
+        margin-left: auto;
+    }
+
+    .footer__nav ul {
+        gap: 6px;
+    }
+
+    /* Режим работы — на всю ширину первой строки.
+       Контакты + 2026 — в одну строку, год прижат вправо по низу. */
+    .footer__bottom {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 20px;
+    }
+
+    .footer__col:first-child {
+        width: 100%;
+    }
+
+    .footer__col:last-of-type {
+        flex: 1;
+    }
+
+    .footer__year {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+}
