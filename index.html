@@ -239,18 +239,19 @@
         const checkVisible = () => {
           const vw = window.innerWidth;
           cards.forEach(card => {
-            if (card.classList.contains('case--visible')) return;
             const rect = card.getBoundingClientRect();
-            // Карточка считается видимой когда её центр попадает в экран
             const center = rect.left + rect.width / 2;
+            // Карточка видна — центр в пределах экрана
             if (center > 0 && center < vw) {
               card.classList.add('case--visible');
+            } else {
+              card.classList.remove('case--visible');
             }
           });
         };
 
         casesEl.addEventListener('scroll', checkVisible, { passive: true });
-        checkVisible(); // первая карточка видна сразу
+        checkVisible();
       };
 
       if (window.matchMedia('(max-width: 768px)').matches) {
