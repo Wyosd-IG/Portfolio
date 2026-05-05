@@ -126,6 +126,13 @@ nav ul {
     cursor: pointer;
     white-space: nowrap;
     flex-shrink: 0;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.header__cta:hover {
+    background-color: var(--bg);
+    color: var(--accent);
+    outline: 1px solid var(--accent);
 }
 
 /* Бургер — скрыт на десктопе */
@@ -356,29 +363,25 @@ nav ul {
 }
 
 .case__btns {
-    position: absolute;
-    bottom: 26px;
-    left: 26px;
-    right: 26px;
     display: flex;
     gap: 10px;
-    z-index: 1;
+    margin-top: 12px;
+    flex-wrap: wrap;
 }
 
-/* Кнопки скрыты в статике */
+/* На десктопе кнопки скрыты — появляются при ховере на карточку */
 .case__pdf,
 .case__link {
     opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Кнопки всплывают снизу по очереди */
-.case__image:hover .case__pdf {
-    opacity: 1; transform: translateY(0); transition-delay: 0.15s;
+.case:hover .case__pdf {
+    opacity: 1; transform: translateY(0); transition-delay: 0.1s;
 }
-.case__image:hover .case__link {
-    opacity: 1; transform: translateY(0); transition-delay: 0.25s;
+.case:hover .case__link {
+    opacity: 1; transform: translateY(0); transition-delay: 0.2s;
 }
 
 /* Визуальные стили кнопок */
@@ -394,6 +397,16 @@ nav ul {
     align-items: center;
     gap: 8px;
     white-space: nowrap;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.case__pdf:hover {
+    background-color: var(--white);
+    color: var(--accent);
+}
+
+.case__pdf:hover svg path {
+    fill: var(--accent);
 }
 
 .case__link {
@@ -408,6 +421,16 @@ nav ul {
     align-items: center;
     gap: 8px;
     white-space: nowrap;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.case__link:hover {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+.case__link:hover svg path {
+    fill: var(--white);
 }
 
 .case__pdf svg,
@@ -415,6 +438,17 @@ nav ul {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
+}
+
+/* Говорим браузеру: тап на кнопке — это клик, не скролл */
+.case__pdf,
+.case__link {
+    touch-action: manipulation;
+}
+
+.case__pdf svg path,
+.case__link svg path {
+    transition: fill 0.25s ease;
 }
 
 /* стили кнопок кейсов — выше в блоке hover-анимаций */
@@ -488,6 +522,22 @@ h2 {
     flex-shrink: 0;
 }
 
+/* ===== АНИМАЦИЯ ИНСТРУМЕНТОВ — начальное скрытое состояние ===== */
+.inst h2,
+.instrumental__left > *,
+.instrumental__right > * {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.inst h2.is-visible,
+.instrumental__left > *.is-visible,
+.instrumental__right > *.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ===== КОНТАКТЫ ===== */
 .contacts {
     display: flex;
@@ -502,12 +552,18 @@ h2 {
     justify-content: center;
     flex: 1;
     aspect-ratio: 1 / 1;
-    background-color: var(--accent);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--accent);
     border-radius: 6px;
     font-size: clamp(14px, 1.5vw, 20px);
     font-weight: 600;
     text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contacts__telegram:hover {
+    background-color: var(--accent);
+    color: var(--white);
 }
 
 .contacts__email {
@@ -522,6 +578,12 @@ h2 {
     font-size: clamp(14px, 1.5vw, 20px);
     font-weight: 600;
     text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contacts__email:hover {
+    background-color: var(--accent);
+    color: var(--white);
 }
 
 /* ===== ФУТЕР ===== */
@@ -733,45 +795,22 @@ footer {
     }
 
     .case__btns {
-        bottom: 16px;
-        left: 16px;
-        right: 16px;
+        margin-top: 10px;
         gap: 8px;
     }
 
     .case__pdf,
     .case__link {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: background-color 0.25s ease, color 0.25s ease !important;
         font-size: 13px;
         padding: 10px 14px;
     }
 
-    /* На мобилке анимация карточки запускается при въезде в экран,
-       а не при ховере — через класс .case--visible (добавляет JS) */
-    .case--visible .case__image::after {
-        background: rgba(0, 0, 0, 0.25);
-    }
-
-    .case--visible .case__meta .tag:nth-child(1) {
-        opacity: 1; transform: translateY(0); transition-delay: 0s;
-    }
-    .case--visible .case__meta .tag:nth-child(2) {
-        opacity: 1; transform: translateY(0); transition-delay: 0.07s;
-    }
-    .case--visible .case__meta .tag:nth-child(3) {
-        opacity: 1; transform: translateY(0); transition-delay: 0.14s;
-    }
-    .case--visible .case__meta .tag:nth-child(4) {
-        opacity: 1; transform: translateY(0); transition-delay: 0.21s;
-    }
-    .case--visible .case__meta .tag:nth-child(5) {
-        opacity: 1; transform: translateY(0); transition-delay: 0.28s;
-    }
-
-    .case--visible .case__pdf {
-        opacity: 1; transform: translateY(0); transition-delay: 0.15s;
-    }
-    .case--visible .case__link {
-        opacity: 1; transform: translateY(0); transition-delay: 0.25s;
+    /* Лёгкое затемнение всегда */
+    .case__image::after {
+        background: rgba(0, 0, 0, 0.18);
     }
 
     /* --- ОПЫТ --- */
@@ -788,7 +827,7 @@ footer {
 
     .experience__body {
         flex-direction: column;
-        gap: 24px;
+        gap: 40px;
     }
 
     .experience__body > * {
